@@ -108,6 +108,11 @@ const escapeHtml = s =>
 
   }
 
+  $('#webTabs')?.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.tab'); if(!btn) return;
+    showPane(btn.dataset.pane);
+  });
+
   $('#webTabs')?.addEventListener('keydown', (e)=>{
     const idx = TAB_ORDER.indexOf(activePane());
     if(e.key==='ArrowLeft' || e.key==='ArrowRight'){
